@@ -1,10 +1,14 @@
 class Usager:
-    def __init__(self, etage, direction, destination):
+    def __init__(self, nom, etage, direction, destination):
+        self.name = nom
         self.etage = etage
         self.direction = direction
         self.destination = destination
         self.dans_ascenseur = False
         self.distrait = False
+        
+    def get_nom(self):
+        return self.name
         
     def set_etage(self, etage):
         self.etage = etage

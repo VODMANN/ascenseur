@@ -1,4 +1,5 @@
 import time
+from couleur_terminal import *
 
 class Porte:
     def __init__(self, etage):
@@ -7,7 +8,7 @@ class Porte:
 
     def ouvrir(self):
         self.ouverte = True
-        print(f"La porte s'ouvre à l'étage {self.etage}")
+        print(CYAN + f"La porte s'ouvre à l'étage {self.etage}" + RESET)
 
     def attendre_laps_temps(self, laps_temps):
         time.sleep(laps_temps)
@@ -20,5 +21,5 @@ class Porte:
 
     def fermer(self):
         self.ouverte = False
-        print(f"La porte se ferme à l'étage {self.etage}")
+        print(ORANGE + f"La porte se ferme à l'étage {self.etage}" + RESET)
 

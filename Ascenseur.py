@@ -1,9 +1,11 @@
+from couleur_terminal import *
+
+
 class Ascenseur:
     def __init__(self):
         self.etage = 0
         self.direction = None
         self.destinations = []
-        self.appels = []
         self.en_mouvement = False
 
     def get_etage(self):
@@ -16,12 +18,7 @@ class Ascenseur:
         return self.en_mouvement
 
     def choisir_direction(self):
-        if self.direction is not None:
-            return
-
-        if self.appels:
-            self.direction = "haut" if self.appels[0] > self.etage else "bas"
-        elif self.destinations:
+        if self.destinations:
             self.direction = "haut" if self.destinations[0] > self.etage else "bas"
         else:
             self.direction = "haut"
@@ -32,8 +29,27 @@ class Ascenseur:
             self.etage += 1
         elif self.direction == "bas":
             self.etage -= 1
-
+        print(BLUE + f"L'ascenseur est à l'étage {self.etage}" + RESET)
+            
+    def deplacer(self):
+        if self.etage in self.destinations:
+            self.destinations.remove(self.etage)
+            return True
+        self.choisir_direction()
+        self.monter_descendre_etage()
+        if self.etage in self.destinations:
+            self.destinations.remove(self.etage)
+            return True
+        elif not self.destinations:
+            self.direction = None
+            return False
+            
+    def ajouter_destination(self, etage):
+        self.destinations.append(etage)
 
     def arret_ascenseur(self):
+        print(RED + f"L'ascenseur s'arrête à l'étage {self.etage}" + RESET)
         self.en_mouvement = False
-
+        
+    def get_destinations(self):
+        return self.destinations
