@@ -14,6 +14,9 @@ class Ascenseur:
     def get_direction(self):
         return self.direction
     
+    def set_en_mouvement(self,mouvement):
+        self.en_mouvement = mouvement
+    
     def get_en_mouvement(self):
         return self.en_mouvement
 
@@ -53,3 +56,6 @@ class Ascenseur:
         
     def get_destinations(self):
         return self.destinations
+    
+    def set_etage(self, etage):
+        self.etage = etage

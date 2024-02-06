@@ -10,9 +10,6 @@ class Porte:
         self.ouverte = True
         print(CYAN + f"La porte s'ouvre à l'étage {self.etage}" + RESET)
 
-    def attendre_laps_temps(self, laps_temps):
-        time.sleep(laps_temps)
-
     def get_etage(self):
         return self.etage
     

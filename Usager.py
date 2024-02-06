@@ -31,6 +31,9 @@ class Usager:
     def rentrer_ascenseur(self):
         if not self.distrait:
             self.dans_ascenseur = True
+            
+    def set_distrait(self, distrait):
+        self.distrait = distrait
     
     def sortir_ascenseur(self):
         self.dans_ascenseur = False
@@ -38,6 +41,7 @@ class Usager:
     def est_ou(self):
         return self.dans_ascenseur
     
-    def appeler_ascenseur(self,systeme):
-        systeme.usagers.append(self)
+
+
+
 

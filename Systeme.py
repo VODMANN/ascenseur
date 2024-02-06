@@ -9,9 +9,10 @@ class Systeme:
         
     def portes_fermees(self):
         for porte in self.portes:
-            if porte.ouverte:
+            if porte.get_ouverte():
                 return False
         return True
+    
 
     def distance_usager(self, usager):
         return abs(usager.etage - usager.destination)
@@ -35,11 +36,7 @@ class Systeme:
             print("Une porte est déjà ouverte")
             return False
         
-    def portes_fermees(self):
-        for porte in self.portes:
-            if porte.ouverte:
-                return False
-        return True
+
             
     def fermer_porte(self, porte):
         if porte.ouverte:
@@ -53,11 +50,6 @@ class Systeme:
                 return porte
         return None
     
-    def etat_porte(self, etage):
-        porte = self.get_porte(etage)
-        if porte is not None:
-            return porte.ouverte
-        return None
     
     def get_usager_etage(self, etage):
         usager_etage = []
@@ -107,8 +99,10 @@ class Systeme:
                 self.deplacer_asc()
             else:
                 print("Ascenseur à l'arrêt: portes ouvertes")
+                return False
         else:
             print("Ascenseur à l'arrêt: plus de destination")
+            return True
 
         
 
