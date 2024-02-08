@@ -4,8 +4,6 @@ from Systeme import Systeme
 from Usager import Usager
 import unittest
 
-
-    
 class TestUsagerMethods(unittest.TestCase):
     def test_usager_distrait(self):
         systeme = Systeme()
@@ -380,6 +378,3 @@ class TestPorteMethods(unittest.TestCase):
         systeme.appele_ascenseur(user4)
         
         self.assertEqual(systeme.deplacer_asc(), False)
-
-
-

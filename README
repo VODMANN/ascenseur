@@ -1,0 +1,7 @@
+Installation ds extensions:
+pip install unittest
+pip install coverage
+
+Lancement des tests et print du rapport:
+python -m coverage run -m unittest .\test.py
+python -m coverage report -m
