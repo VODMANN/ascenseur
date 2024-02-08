@@ -48,7 +48,8 @@ class Ascenseur:
             return False
             
     def ajouter_destination(self, etage):
-        self.destinations.append(etage)
+        if etage not in self.destinations:
+            self.destinations.append(etage)
 
     def arret_ascenseur(self):
         print(RED + f"L'ascenseur s'arrête à l'étage {self.etage}" + RESET)
